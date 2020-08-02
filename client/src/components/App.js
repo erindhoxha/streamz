@@ -37,13 +37,12 @@ const Header = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink>
-                <Link to="/">Home</Link>
+              <NavLink tag={Link} to="/">
+                Home
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink>
-                <Link to="/stream/new">Create</Link>
+              <NavLink tag={Link} to="/stream/new">Create
               </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
@@ -51,15 +50,12 @@ const Header = (props) => {
                 Options
               </DropdownToggle>
               <DropdownMenu right>
-                <NavLink>
-                  <Link to="/stream/edit">Edit</Link>
+                <NavLink tag={Link} className="text-dark" to="/stream/edit">Edit
                 </NavLink>
-                <NavLink>
-                  <Link to="/stream/delete">Delete a stream</Link>
+                <NavLink tag={Link} className="text-dark" to="/stream/delete">Delete a stream
                 </NavLink>
                 <DropdownItem divider />
-                <NavLink>
-                  <Link to="/stream/show">Show stream</Link>
+                <NavLink tag={Link} className="text-dark" to="/stream/show">Show stream
                 </NavLink>
               </DropdownMenu>
             </UncontrolledDropdown>
