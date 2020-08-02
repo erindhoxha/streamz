@@ -18,7 +18,6 @@ import GoogleAuth from "./GoogleAuth"
 
 const Header = (props) => {
     const [isOpen, setIsOpen] = useState(false);
-
     const toggle = () => setIsOpen(!isOpen);
     return (
         <div>
@@ -44,11 +43,8 @@ const Header = (props) => {
                                 <NavLink tag={Link} className="text-dark" to="/stream/show">Show stream</NavLink>
                             </DropdownMenu>
                         </UncontrolledDropdown>
-                        <NavItem>
-                            <GoogleAuth />
-                        </NavItem>
                     </Nav>
-                    <NavbarText>Follow us on Instagram: @streamzofficial</NavbarText>
+                    <NavbarText><GoogleAuth /></NavbarText>
                 </Collapse>
             </Navbar>
         </div>
