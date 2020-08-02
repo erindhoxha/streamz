@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'reactstrap';
+import { NavLink, Spinner } from 'reactstrap';
 import { Link } from "react-router-dom"
 import Config from "../config"
 
@@ -41,11 +41,17 @@ class GoogleAuth extends React.Component {
 
     renderAuthButton() {
         if (this.state.isSignedIn === null) {
-            return <div>I don't know if we are signed in!</div>
+            return (
+                <div>
+                    <Spinner animation="border" role="status">
+                        <span className="sr-only">Loading...</span>
+                    </Spinner>
+                </div>
+            )
         } else if (this.state.isSignedIn) {
-            return <div>Hello, user! <button onClick={() => { window.gapi.auth2.getAuthInstance().signOut(); }}>Sign out</button></div>
+            return <div>Hello, user! <button className="btn btn-danger" onClick={() => { window.gapi.auth2.getAuthInstance().signOut(); }}>Sign out</button></div>
         } else if (this.state.isSignedIn === false) {
-            return <div>Please <button onClick={() => this.gAuthInit()}>Sign in</button></div>
+            return <div><button className="btn btn-primary" onClick={() => this.gAuthInit()}>Sign in</button></div>
         }
     }
 
