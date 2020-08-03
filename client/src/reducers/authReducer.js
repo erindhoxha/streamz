@@ -1,12 +1,12 @@
-
+import { SIGN_IN, SIGN_OUT } from "../actions/types"
 
 export default (state = { isSignedIn: null }, action) => {
     switch (action.type) {
-        case 'SIGN_IN':
+        case SIGN_IN:
             console.log('Reducer sign in is started');
             return { ...state, isSignedIn: true }
             break;
-        case 'SIGN_OUT':
+        case SIGN_OUT:
             console.log('Reducer sign out is started');
             return { ...state, isSignedIn: false }
             break;

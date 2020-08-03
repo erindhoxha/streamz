@@ -4,8 +4,11 @@ import Config from "../config"
 import { connect } from 'react-redux'
 import { SignIn, SignOut } from "../actions"
 
-class GoogleAuth extends React.Component {
 
+class GoogleAuth extends React.Component {
+    state = {
+        name: null
+    }
     componentDidMount() {
         this.gAuthInit();
     }
@@ -16,9 +19,17 @@ class GoogleAuth extends React.Component {
                 clientId: `${Config.googleAuthKey}.apps.googleusercontent.com`,
                 scope: "email"
             }).then(() => {
+                // Initialize AUTH
                 this.auth = window.gapi.auth2.getAuthInstance();
-                this.onAuthChange(this.auth.isSignedIn.get());
+                console.log(this.auth);
+                this.setState({
+                    name: this.auth.currentUser.get().getBasicProfile().getName()
+                })
+                // This.auth.isSignedIn if it changes, it listens and it runs the function in the argument
                 this.auth.isSignedIn.listen(this.onAuthChange);
+                // Run onAuthChange with the value it has to initiate state
+                this.onAuthChange(this.auth.isSignedIn.get());
+
             })
         })
     }
@@ -49,9 +60,20 @@ class GoogleAuth extends React.Component {
                 </div>
             )
         } else if (this.props.isSignedIn) {
-            return <div>Hello, user! <button className="btn btn-danger" onClick={this.onSignOutClick}>Sign out <i className="fab fa-google" aria-hidden="true"></i></button></div >
+            return (<div>Hello, {this.state.name}!
+                <button className="btn btn-danger"
+                    onClick={this.onSignOutClick}>Sign out <i className="fab fa-google" aria-hidden="true"></i>
+                </button>
+            </div>
+            )
         } else if (this.props.isSignedIn === false) {
-            return <div><button className="btn btn-danger" onClick={this.onSignInClick}><i className="fab fa-google"></i> Sign in with Google</button></div>
+            return (<div>
+                <button
+                    className="btn btn-danger"
+                    onClick={this.onSignInClick}>
+                    Sign in with Google <i className="fab fa-google"></i>
+                </button>
+            </div>)
         }
     }
 
