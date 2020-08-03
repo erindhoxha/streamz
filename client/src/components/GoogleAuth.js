@@ -7,7 +7,8 @@ import { SignIn, SignOut } from "../actions"
 
 class GoogleAuth extends React.Component {
     state = {
-        name: null
+        name: null,
+        id: null
     }
     componentDidMount() {
         this.gAuthInit();
@@ -22,9 +23,6 @@ class GoogleAuth extends React.Component {
                 // Initialize AUTH
                 this.auth = window.gapi.auth2.getAuthInstance();
                 console.log(this.auth);
-                this.setState({
-                    name: this.auth.currentUser.get().getBasicProfile().getName()
-                })
                 // This.auth.isSignedIn if it changes, it listens and it runs the function in the argument
                 this.auth.isSignedIn.listen(this.onAuthChange);
                 // Run onAuthChange with the value it has to initiate state
@@ -36,7 +34,7 @@ class GoogleAuth extends React.Component {
 
     onAuthChange = (isSignedIn) => {
         if (isSignedIn) {
-            this.props.SignIn();
+            this.props.SignIn(this.auth.currentUser.get().getBasicProfile().getId(), this.auth.currentUser.get().getBasicProfile().getName());
         } else {
             this.props.SignOut();
         }
@@ -60,7 +58,7 @@ class GoogleAuth extends React.Component {
                 </div>
             )
         } else if (this.props.isSignedIn) {
-            return (<div>Hello, {this.state.name}!
+            return (<div>Hello, {this.props.name}!
                 <button className="btn btn-danger"
                     onClick={this.onSignOutClick}>Sign out <i className="fab fa-google" aria-hidden="true"></i>
                 </button>
@@ -87,7 +85,7 @@ class GoogleAuth extends React.Component {
 const mapStateToProps = (state) => {
     console.log(state);
     // This will be converted from STATE to PROPS
-    return { isSignedIn: state.auth.isSignedIn }
+    return { isSignedIn: state.auth.isSignedIn, id: state.auth.id, name: state.auth.name }
 }
 
 export default connect(
