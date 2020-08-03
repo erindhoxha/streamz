@@ -1,8 +1,6 @@
-const INITIAL_STATE = {
-    isSignedIn: null
-};
 
-export default (state = INITIAL_STATE, action) => {
+
+export default (state = { isSignedIn: null }, action) => {
     switch (action.type) {
         case 'SIGN_IN':
             console.log('Reducer sign in is started');
