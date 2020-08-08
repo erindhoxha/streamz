@@ -58,7 +58,7 @@ class GoogleAuth extends React.Component {
                 </div>
             )
         } else if (this.props.isSignedIn) {
-            return (<div>Hello, {this.props.name}!
+            return (<div className="profile"><span>Hello, {this.props.name}!</span>
                 <button className="btn btn-danger"
                     onClick={this.onSignOutClick}>Sign out <i className="fab fa-google" aria-hidden="true"></i>
                 </button>

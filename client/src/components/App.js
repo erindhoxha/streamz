@@ -5,9 +5,10 @@ import StreamEdit from "./streams/StreamEdit";
 import StreamDelete from "./streams/StreamDelete";
 import StreamShow from "./streams/StreamShow";
 import Header from "./Header";
+import "../style/global.css";
 
 const PageOne = () => {
-  return <div>PageOne</div>;
+  return <div></div>;
 };
 const PageTwo = () => {
   return <div>PageTwo</div>;

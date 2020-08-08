@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=B612:wght@400;700&display=swap');
+
+$black: #111111;
+$white: #ece8e1;
+
+body {
+    font-size: 16px !important;
+    font-family: 'B612', sans-serif !important;
+    background-color: $white !important;
+}
+
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+p,
+span,
+div,
+a {
+    font-size: 1em !important;
+}
+
+.navbar {
+    background-color: $black;
+    height: 80px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.section:after {
+    left: 5%;
+    border-left: 1px solid rgba(9, 9, 9, .4);
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgba(9, 9, 9, 0.4);
+}
+
+.profile {
+    span {
+        padding-right: 10px;
+        font-size: 14px !important;
+        font-weight: 600;
+    }
+}
+
+div.megaheaderh1 {
+    position: relative;
+
+    .h1-megaheader {
+        font-size: 6em;
+        font-weight: 700;
+        position: absolute;
+        z-index: 2;
+        left: 10%;
+        top: 50px;
+    }
+
+    .h1-megaheader-outlined {
+        color: $white;
+        text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.05), 1px -1px 0 rgba(0, 0, 0, 0.05), -1px 1px 0 rgba(0, 0, 0, 0.05), 1px 1px 0 rgba(0, 0, 0, 0.05);
+        position: absolute;
+        font-weight: 700;
+        font-size: 8em;
+        white-space: pre;
+    }
+}
+
+
+.nav-item {
+    a {
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding-left: 30px !important;
+    }
+
+    .dropdown-toggle {
+        a {
+            color: $black !important;
+        }
+    }
+
+    font-size: 0.8em;
+    color: white !important;
+    opacity: 1;
+}
+
+button {
+    border-radius: 0px !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+}
+
+@import "./partials/hamburger";
