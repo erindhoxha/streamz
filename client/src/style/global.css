@@ -45,8 +45,19 @@ a {
   font-weight: 600;
 }
 
+@keyframes animate {
+  from {
+    bottom: -150px;
+  }
+  to {
+    bottom: 0px;
+  }
+}
 div.megaheaderh1 {
   position: relative;
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
 }
 div.megaheaderh1 .h1-megaheader {
   font-size: 6em;
@@ -54,7 +65,13 @@ div.megaheaderh1 .h1-megaheader {
   position: absolute;
   z-index: 2;
   left: 10%;
-  top: 50px;
+  color: #111111;
+  position: absolute;
+  font-weight: 700;
+  transition: 0.3s ease;
+  bottom: 0px;
+  animation: animate 0.7s ease-in-out;
+  animation-direction: alternate;
 }
 div.megaheaderh1 .h1-megaheader-outlined {
   color: #ece8e1;
@@ -65,16 +82,21 @@ div.megaheaderh1 .h1-megaheader-outlined {
   white-space: pre;
 }
 
+.logo {
+  width: 50px;
+}
+
 .nav-item {
   font-size: 0.8em;
-  color: white !important;
+  color: #F9F9F9 !important;
   opacity: 1;
 }
 .nav-item a {
-  color: white;
+  color: #F9F9F9;
   font-weight: 700;
   text-transform: uppercase;
   padding-left: 30px !important;
+  letter-spacing: 1px;
 }
 .nav-item .dropdown-toggle a {
   color: #111111 !important;
@@ -84,6 +106,10 @@ button {
   border-radius: 0px !important;
   font-size: 0.95rem !important;
   font-weight: 700 !important;
+}
+
+.btn-danger {
+  background-color: #FF4655 !important;
 }
 
 .ham {

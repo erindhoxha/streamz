@@ -2,6 +2,8 @@
 
 $black: #111111;
 $white: #ece8e1;
+$white-text: #F9F9F9;
+$red: #FF4655;
 
 body {
     font-size: 16px !important;
@@ -52,8 +54,21 @@ a {
     }
 }
 
+@keyframes animate {
+    from {
+        bottom: -150px;
+    }
+
+    to {
+        bottom: 0px;
+    }
+}
+
 div.megaheaderh1 {
     position: relative;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
 
     .h1-megaheader {
         font-size: 6em;
@@ -61,7 +76,13 @@ div.megaheaderh1 {
         position: absolute;
         z-index: 2;
         left: 10%;
-        top: 50px;
+        color: $black;
+        position: absolute;
+        font-weight: 700;
+        transition: 0.3s ease;
+        bottom: 0px;
+        animation: animate 0.7s ease-in-out;
+        animation-direction: alternate;
     }
 
     .h1-megaheader-outlined {
@@ -74,13 +95,17 @@ div.megaheaderh1 {
     }
 }
 
+.logo {
+    width: 50px;
+}
 
 .nav-item {
     a {
-        color: white;
+        color: $white-text;
         font-weight: 700;
         text-transform: uppercase;
         padding-left: 30px !important;
+        letter-spacing: 1px;
     }
 
     .dropdown-toggle {
@@ -90,7 +115,7 @@ div.megaheaderh1 {
     }
 
     font-size: 0.8em;
-    color: white !important;
+    color: $white-text !important;
     opacity: 1;
 }
 
@@ -98,6 +123,10 @@ button {
     border-radius: 0px !important;
     font-size: 0.95rem !important;
     font-weight: 700 !important;
+}
+
+.btn-danger {
+    background-color: $red !important;
 }
 
 @import "./partials/hamburger";
