@@ -65,13 +65,14 @@ div.megaheaderh1 .h1-megaheader {
   position: absolute;
   z-index: 2;
   left: 10%;
-  color: #111111;
+  color: #0f1923;
   position: absolute;
   font-weight: 700;
   transition: 0.3s ease;
   bottom: 0px;
   animation: animate 0.7s ease-in-out;
   animation-direction: alternate;
+  letter-spacing: -3px;
 }
 div.megaheaderh1 .h1-megaheader-outlined {
   color: #ece8e1;
@@ -86,7 +87,258 @@ div.megaheaderh1 .h1-megaheader-outlined {
   width: 50px;
 }
 
+.glitch {
+  position: relative;
+  color: white;
+  font-size: 4em;
+  /* Animation provies a slight random skew. Check bottom of doc
+  for more information on how to random skew. */
+  animation: glitch-skew 2s infinite linear alternate-reverse;
+}
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0 !important;
+  width: 100%;
+  height: 100%;
+  white-space: pre;
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  /* Creates an initial clip for our glitch. This works in
+  a typical top,right,bottom,left fashion and creates a mask
+  to only show a certain part of the glitch at a time. */
+  clip: rect(44px, 450px, 56px, 0);
+  /* Runs our glitch-anim defined below to run in a 5s loop, infinitely,
+  with an alternating animation to keep things fresh. */
+  animation: glitch-anim 12s infinite linear alternate-reverse;
+}
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0 !important;
+  width: 100%;
+  height: 100%;
+  white-space: pre;
+  left: -2px;
+  text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+  animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
+
+/* Creates an animation with 20 steaps. For each step, it calculates 
+a percentage for the specific step. It then generates a random clip
+box to be used for the random glitch effect. Also adds a very subtle
+skew to change the 'thickness' of the glitch.*/
+@keyframes glitch-anim {
+  0% {
+    clip: rect(18px, 9999px, 75px, 0);
+    transform: skew(0.64deg);
+  }
+  5% {
+    clip: rect(12px, 9999px, 43px, 0);
+    transform: skew(0.7deg);
+  }
+  10% {
+    clip: rect(12px, 9999px, 24px, 0);
+    transform: skew(0.38deg);
+  }
+  15% {
+    clip: rect(79px, 9999px, 50px, 0);
+    transform: skew(0.52deg);
+  }
+  20% {
+    clip: rect(51px, 9999px, 20px, 0);
+    transform: skew(0.4deg);
+  }
+  25% {
+    clip: rect(69px, 9999px, 97px, 0);
+    transform: skew(0.72deg);
+  }
+  30% {
+    clip: rect(5px, 9999px, 47px, 0);
+    transform: skew(0.79deg);
+  }
+  35% {
+    clip: rect(45px, 9999px, 79px, 0);
+    transform: skew(0.77deg);
+  }
+  40% {
+    clip: rect(20px, 9999px, 19px, 0);
+    transform: skew(0.22deg);
+  }
+  45% {
+    clip: rect(8px, 9999px, 4px, 0);
+    transform: skew(0.33deg);
+  }
+  50% {
+    clip: rect(75px, 9999px, 2px, 0);
+    transform: skew(0.11deg);
+  }
+  55% {
+    clip: rect(68px, 9999px, 95px, 0);
+    transform: skew(0.18deg);
+  }
+  60% {
+    clip: rect(22px, 9999px, 29px, 0);
+    transform: skew(0.14deg);
+  }
+  65% {
+    clip: rect(27px, 9999px, 78px, 0);
+    transform: skew(0.82deg);
+  }
+  70% {
+    clip: rect(45px, 9999px, 59px, 0);
+    transform: skew(0.72deg);
+  }
+  75% {
+    clip: rect(85px, 9999px, 41px, 0);
+    transform: skew(0.2deg);
+  }
+  80% {
+    clip: rect(79px, 9999px, 89px, 0);
+    transform: skew(0.53deg);
+  }
+  85% {
+    clip: rect(22px, 9999px, 71px, 0);
+    transform: skew(1deg);
+  }
+  90% {
+    clip: rect(44px, 9999px, 59px, 0);
+    transform: skew(0.43deg);
+  }
+  95% {
+    clip: rect(57px, 9999px, 57px, 0);
+    transform: skew(0.88deg);
+  }
+  100% {
+    clip: rect(66px, 9999px, 6px, 0);
+    transform: skew(0.94deg);
+  }
+}
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(5px, 9999px, 27px, 0);
+    transform: skew(0.62deg);
+  }
+  5% {
+    clip: rect(21px, 9999px, 87px, 0);
+    transform: skew(0.12deg);
+  }
+  10% {
+    clip: rect(52px, 9999px, 73px, 0);
+    transform: skew(0.01deg);
+  }
+  15% {
+    clip: rect(76px, 9999px, 50px, 0);
+    transform: skew(0.84deg);
+  }
+  20% {
+    clip: rect(29px, 9999px, 69px, 0);
+    transform: skew(0.91deg);
+  }
+  25% {
+    clip: rect(71px, 9999px, 25px, 0);
+    transform: skew(0.09deg);
+  }
+  30% {
+    clip: rect(47px, 9999px, 11px, 0);
+    transform: skew(0.92deg);
+  }
+  35% {
+    clip: rect(68px, 9999px, 34px, 0);
+    transform: skew(0.15deg);
+  }
+  40% {
+    clip: rect(27px, 9999px, 72px, 0);
+    transform: skew(0.03deg);
+  }
+  45% {
+    clip: rect(95px, 9999px, 16px, 0);
+    transform: skew(0.3deg);
+  }
+  50% {
+    clip: rect(7px, 9999px, 17px, 0);
+    transform: skew(0.27deg);
+  }
+  55% {
+    clip: rect(22px, 9999px, 20px, 0);
+    transform: skew(0.87deg);
+  }
+  60% {
+    clip: rect(43px, 9999px, 46px, 0);
+    transform: skew(0.71deg);
+  }
+  65% {
+    clip: rect(76px, 9999px, 79px, 0);
+    transform: skew(0.87deg);
+  }
+  70% {
+    clip: rect(87px, 9999px, 29px, 0);
+    transform: skew(0.49deg);
+  }
+  75% {
+    clip: rect(46px, 9999px, 71px, 0);
+    transform: skew(0.21deg);
+  }
+  80% {
+    clip: rect(21px, 9999px, 10px, 0);
+    transform: skew(0.07deg);
+  }
+  85% {
+    clip: rect(96px, 9999px, 46px, 0);
+    transform: skew(0.07deg);
+  }
+  90% {
+    clip: rect(5px, 9999px, 11px, 0);
+    transform: skew(0.8deg);
+  }
+  95% {
+    clip: rect(79px, 9999px, 65px, 0);
+    transform: skew(0.02deg);
+  }
+  100% {
+    clip: rect(11px, 9999px, 8px, 0);
+    transform: skew(0.47deg);
+  }
+}
+@keyframes glitch-skew {
+  0% {
+    transform: skew(2deg);
+  }
+  10% {
+    transform: skew(-1deg);
+  }
+  20% {
+    transform: skew(-3deg);
+  }
+  30% {
+    transform: skew(2deg);
+  }
+  40% {
+    transform: skew(5deg);
+  }
+  50% {
+    transform: skew(2deg);
+  }
+  60% {
+    transform: skew(-1deg);
+  }
+  70% {
+    transform: skew(1deg);
+  }
+  80% {
+    transform: skew(4deg);
+  }
+  90% {
+    transform: skew(2deg);
+  }
+  100% {
+    transform: skew(5deg);
+  }
+}
 .nav-item {
+  padding-left: 30px;
   font-size: 0.8em;
   color: #F9F9F9 !important;
   opacity: 1;
@@ -95,7 +347,6 @@ div.megaheaderh1 .h1-megaheader-outlined {
   color: #F9F9F9;
   font-weight: 700;
   text-transform: uppercase;
-  padding-left: 30px !important;
   letter-spacing: 1px;
 }
 .nav-item .dropdown-toggle a {
