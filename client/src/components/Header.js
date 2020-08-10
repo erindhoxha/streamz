@@ -61,12 +61,14 @@ const Header = (props) => {
                 </svg>
             </Navbar>
             <div style={{ height: '100%', backgroundColor: 'black', position: 'relative' }}>
-                <button style={{ width: '300px', height: '100px', backgroundColor: '#dc3545', fontSize: '20px' }}>Get game now</button>
-                <div style={{ width: '70%', height: '100%', borderLeft: '1px solid rgba(255,255,255,0.4)', margin: '0 auto', position: 'absolute', left: '25%', zIndex: '99999' }}>
+                <div style={{ padding: '10px', border: '1px solid rgba(0,0,0,0.2)', position: 'absolute', top: '0', left: '0', right: '0', bottom: '0', margin: 'auto', zIndex: '9999999' }}>
+                    <button style={{ height: '50px', padding: '10px 30px 10px 30px', border: 'none', backgroundColor: '#dc3545', fontSize: '20px', zIndex: '999999999999' }}>Get game now</button>
+                </div>
+                <div style={{ width: '70%', height: '100%', borderLeft: '1px solid rgba(255,255,255,0.2)', margin: '0 auto', position: 'absolute', left: '25%', zIndex: '99999', top: '0' }}>
                     <div style={{ width: '20px', height: '20px', backgroundColor: '#dc3545', position: 'absolute', left: '0', top: '30%' }}></div>
                 </div>
-                <div style={{ width: '70%', height: '100%', borderLeft: '1px solid rgba(255,255,255,0.4)', margin: '0 auto', position: 'absolute', right: '25%', zIndex: '99999' }}></div>
-                <div style={{ width: '40%', height: '100%', borderRight: '1px solid rgba(255,255,255,0.4)', margin: '0 auto', position: 'absolute', right: '15%', zIndex: '99999' }}>
+                <div style={{ width: '70%', height: '100%', borderLeft: '1px solid rgba(255,255,255,0.2)', margin: '0 auto', position: 'absolute', right: '25%', zIndex: '99999' }}></div>
+                <div style={{ width: '40%', height: '100%', borderRight: '1px solid rgba(255,255,255,0.2)', margin: '0 auto', position: 'absolute', right: '15%', zIndex: '99999', top: '0' }}>
                     <div style={{ width: '20px', height: '20px', backgroundColor: '#dc3545', position: 'absolute', right: '0', top: '60%' }}></div>
                     <div style={{ width: '20px', height: '20px', backgroundColor: '#dc3545', position: 'absolute', right: '0', top: '2%' }}></div>
                 </div>
