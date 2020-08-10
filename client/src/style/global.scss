@@ -7,7 +7,7 @@ $red: #FF4655;
 $textColor: #0f1923;
 
 body {
-    font-size: 16px !important;
+    font-size: 14px !important;
     font-family: 'B612', sans-serif !important;
     background-color: $white !important;
 }
@@ -28,7 +28,8 @@ h3 {
 p,
 span,
 div,
-a {
+a,
+button {
     font-size: 1em !important;
 }
 
@@ -47,10 +48,14 @@ a {
     border-left-color: rgba(9, 9, 9, 0.4);
 }
 
+button {
+    font-size: 13px !important;
+}
+
 .profile {
     span {
         padding-right: 10px;
-        font-size: 14px !important;
+        font-size: 13px !important;
         font-weight: 600;
     }
 }
@@ -109,6 +114,12 @@ div.megaheaderh1 {
     width: 100%;
     height: 100%;
     white-space: pre;
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.profil,
+button {
+    color: $white-text !important;
 }
 
 .glitch {
@@ -205,7 +216,6 @@ skew to change the 'thickness' of the glitch.*/
 
 button {
     border-radius: 0px !important;
-    font-size: 0.95rem !important;
     font-weight: 700 !important;
 }
 

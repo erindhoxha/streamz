@@ -25,7 +25,6 @@ const Header = (props) => {
         <div>
             <Navbar dark expand="sm">
                 <NavbarBrand href="/"><img className="logo" src="../assets/v.png" /></NavbarBrand>
-                <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
@@ -61,7 +60,17 @@ const Header = (props) => {
                         d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
                 </svg>
             </Navbar>
-            <img src="../assets/v2.png" />
+            <div style={{ height: '100%', backgroundColor: 'black', position: 'relative' }}>
+                <div style={{ width: '70%', height: '100%', borderLeft: '1px solid rgba(255,255,255,0.4)', margin: '0 auto', position: 'absolute', left: '25%', zIndex: '99999' }}>
+                    <div style={{ width: '20px', height: '20px', backgroundColor: 'blue', position: 'absolute', left: '0', top: '30%' }}></div>
+                </div>
+                <div style={{ width: '70%', height: '100%', borderLeft: '1px solid rgba(255,255,255,0.4)', margin: '0 auto', position: 'absolute', right: '25%', zIndex: '99999' }}></div>
+                <div style={{ width: '40%', height: '100%', borderRight: '1px solid rgba(255,255,255,0.4)', margin: '0 auto', position: 'absolute', right: '15%', zIndex: '99999' }}>
+                    <div style={{ width: '20px', height: '20px', backgroundColor: 'blue', position: 'absolute', right: '0', top: '60%' }}></div>
+                </div>
+                <img style={{ height: '800px', width: '100%', objectFit: 'cover', opacity: 0.6 }} src="./assets/banner.jpeg" />
+            </div>
+            <hr />
             <div className="megaheaderh1">
                 <h1 className="h1-megaheader">FIND YOUR FAVOURITE STREAMS.</h1>
                 <h1 className="h1-megaheader-outlined">FIND YOUR FAVOURITE STREAMS.</h1>
