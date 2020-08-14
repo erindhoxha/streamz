@@ -72,6 +72,18 @@ button {
     }
 }
 
+@keyframes animate-btn {
+    from {
+        bottom: -150px;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 70px;
+        opacity: 1;
+    }
+}
+
 .banner-wrapper {
     max-height: 600px;
     overflow: hidden;
@@ -119,9 +131,6 @@ button {
             text-transform: uppercase;
             transition: 0.3s ease;
             bottom: 0px;
-            animation: animate 0.5s ease-in-out;
-            animation-direction: alternate;
-            letter-spacing: 0px;
             opacity: 1;
             margin-bottom: 50px;
         }
@@ -135,9 +144,9 @@ button {
             font-size: 16px !important;
             outline: 0;
             z-index: 999999999999;
+            transition: ease;
             bottom: 70px;
-            animation: animate 0.2s ease-in-out;
-            animation-direction: alternate;
+            animation: animate-btn 1s;
 
             &:after {
                 content: "";
@@ -180,13 +189,24 @@ button {
         object-fit: cover;
         opacity: 0.5;
         bottom: 0px;
-        animation: animate 0.2s ease-in-out;
-        animation-direction: alternate;
         height: 100%;
     }
 
+    transition:0.3s ease-in-out;
     background-color: #131313;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%23f03f3f' fill-opacity='0.1' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    animation: animateImage 0.4s ease-in-out;
+    opacity:1;
+}
+
+@keyframes animateImage {
+    from {
+        background-color: rgba(#131313, 0.9);
+    }
+
+    to {
+        background-color: rgba(#131313, 1);
+    }
 }
 
 div.megaheaderh1 {
