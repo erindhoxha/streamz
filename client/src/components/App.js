@@ -6,10 +6,8 @@ import StreamDelete from "./streams/StreamDelete";
 import StreamShow from "./streams/StreamShow";
 import Header from "./Header";
 import "../style/global.css";
+import FirstPage from "./MainPage";
 
-const PageOne = () => {
-  return <div></div>;
-};
 const PageTwo = () => {
   return <div>PageTwo</div>;
 };
@@ -19,7 +17,7 @@ const App = () => {
     <div>
       <BrowserRouter>
         <Header />
-        <Route path="/" exact component={PageOne} />
+        <Route path="/" exact component={FirstPage} />
         <Route path="/stream/new" exact component={StreamCreate} />
         <Route path="/stream/edit" exact component={StreamEdit} />
         <Route path="/stream/delete" exact component={StreamDelete} />
