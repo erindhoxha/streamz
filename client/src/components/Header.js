@@ -102,7 +102,7 @@ const Header = (props) => {
         className="banner-wrapper"
       >
         <div className="banner-welcome-msg">
-          <h6 classsName="header-small">Find, watch, stream any videos</h6>
+          <h6 className="header-small">Find, watch, stream any videos</h6>
           <h1 className="h1-banner">streamatic</h1>
           <h1 className="h1-bg">streamatic</h1>
           <button className="banner-btn">

@@ -22,7 +22,6 @@ class GoogleAuth extends React.Component {
             }).then(() => {
                 // Initialize AUTH
                 this.auth = window.gapi.auth2.getAuthInstance();
-                console.log(this.auth);
                 // This.auth.isSignedIn if it changes, it listens and it runs the function in the argument
                 this.auth.isSignedIn.listen(this.onAuthChange);
                 // Run onAuthChange with the value it has to initiate state
@@ -83,7 +82,6 @@ class GoogleAuth extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     // This will be converted from STATE to PROPS
     return { isSignedIn: state.auth.isSignedIn, id: state.auth.id, name: state.auth.name }
 }
