@@ -17,8 +17,8 @@ const FirstPage = () => {
       >
         <div
           style={{
-            width: "20px",
-            height: "20px",
+            width: "15px",
+            height: "15px",
             backgroundColor: "#dc3545",
             position: "sticky",
             left: "0",
@@ -27,12 +27,11 @@ const FirstPage = () => {
         ></div>
       </div>
       <div className="megaheaderh1">
-        <h1 className="h1-megaheader-outlined">FIND YOUR FAVOURITE STREAMS.</h1>
         <h1 className="h1-megaheader">FIND YOUR FAVOURITE STREAMS.</h1>
         <div
           style={{
-            width: "20px",
-            height: "20px",
+            width: "15px",
+            height: "15px",
             backgroundColor: "#dc3545",
             position: "absolute",
             right: "0",

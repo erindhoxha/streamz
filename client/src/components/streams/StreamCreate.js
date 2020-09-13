@@ -2,20 +2,33 @@ import React from "react";
 import { Field, reduxForm } from 'redux-form'
 
 class StreamCreate extends React.Component {
-  renderInput({ input, label, meta }) {
-    console.log(meta);
+  renderError({ error, warning, touched }) {
+    if (touched && error) {
+      return (
+        <div className="alert alert-danger">
+          {error}
+        </div>
+      )
+    }
+    if (touched && warning) {
+      return (
+        <div className="alert alert-warning">
+          {warning}
+        </div>
+      )
+    }
+  }
+  renderInput = ({ input, label, meta }) => {
     return (
       <div className="form-group">
         <label>{label}</label>
         <input autoComplete="off" className="form-control form-control-md" {...input} />
-        {meta.touched ? (
-          <div className="invalid-feedback d-block">{meta.error}</div>
-        ) : ''}
+        {this.renderError(meta)}
       </div>
     );
   }
   onSubmit(formValues) {
-    console.log('Running!');
+    console.log(formValues);
   }
   render() {
     return (
@@ -24,12 +37,6 @@ class StreamCreate extends React.Component {
           <Field name="title" component={this.renderInput} label="Enter title" />
           <Field name="description" component={this.renderInput} label="Enter description" />
           <input type="submit" disabled={this.props.submitting} value="Submit"></input>
-          {this.props.submitSucceeded ? (
-            <p>Submission successful.</p>
-          ) : ''}
-          {this.props.submitFailed ? (
-            <p>Submission failed. Please try again.</p>
-          ) : ''}
         </form>
       </div>
     )

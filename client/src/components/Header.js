@@ -95,7 +95,6 @@ const Header = (props) => {
       </Navbar>
       <div
         style={{
-          height: "100%",
           backgroundColor: "black",
           position: "relative",
         }}
@@ -103,8 +102,8 @@ const Header = (props) => {
       >
         <div className="banner-welcome-msg">
           <h6 className="header-small">Find, watch, stream any videos</h6>
-          <h1 className="h1-banner">streamatic</h1>
-          <h1 className="h1-bg">streamatic</h1>
+          <h1 className="h1-banner">stream.io</h1>
+          <h1 className="h1-bg">stream.io</h1>
           <button className="banner-btn">
             <div
               style={{
@@ -143,8 +142,8 @@ const Header = (props) => {
         >
           <div
             style={{
-              width: "20px",
-              height: "20px",
+              width: "15px",
+              height: "15px",
               backgroundColor: "#dc3545",
               position: "sticky",
               left: "0",
@@ -177,8 +176,8 @@ const Header = (props) => {
         >
           <div
             style={{
-              width: "20px",
-              height: "20px",
+              width: "15px",
+              height: "15px",
               backgroundColor: "#dc3545",
               position: "absolute",
               right: "0",
@@ -187,8 +186,8 @@ const Header = (props) => {
           ></div>
           <div
             style={{
-              width: "20px",
-              height: "20px",
+              width: "15px",
+              height: "15px",
               backgroundColor: "#dc3545",
               position: "absolute",
               right: "0",
@@ -202,8 +201,8 @@ const Header = (props) => {
         />
         <div
           style={{
-            width: "20px",
-            height: "20px",
+            width: "15px",
+            height: "15px",
             backgroundColor: "#dc3545",
             position: "absolute",
             left: "25",

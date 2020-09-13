@@ -33,11 +33,25 @@ button {
     font-size: 1em !important;
 }
 
+::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: rgba($red, 0.8);
+}
+
+::selection {
+    color: white;
+    background: rgba($red, 0.8);
+}
+
 .navbar {
     background-color: $black;
     height: 80px;
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
+    position: absolute !important;
+    width: 100%;
+    z-index: 9999999999999999999;
 }
 
 .section:after {
@@ -85,9 +99,10 @@ button {
 }
 
 .banner-wrapper {
-    max-height: 600px;
+    height: 100vh;
     overflow: hidden;
     position: relative;
+    max-height: 100vh;
 
     .banner-welcome-msg {
         h6 {
@@ -96,7 +111,6 @@ button {
             margin-bottom: 15px;
         }
 
-        max-height:600px;
         padding: 10px;
         border: 1px solid rgba(0, 0, 0, 0.2);
         position: absolute;
@@ -117,8 +131,8 @@ button {
 
         h1.h1-bg {
             position: absolute;
-            color: rgba(0, 0, 0, 1) !important;
-            opacity: 0.15;
+            color: rgba(0, 0, 0, 0) !important;
+            opacity: 0.04;
             font-size: 200px;
             text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.2), 1px -1px 0 rgba(255, 255, 255, 0.2), -1px 2px 0 rgba(255, 255, 255, 0.2), 1px 2px 0 rgba(255, 255, 255, 0.2);
         }
@@ -129,8 +143,6 @@ button {
             font-weight: 700;
             font-size: 90px;
             text-transform: uppercase;
-            transition: 0.3s ease;
-            bottom: 0px;
             opacity: 1;
             margin-bottom: 50px;
         }
@@ -194,7 +206,7 @@ button {
 
     transition:0.3s ease-in-out;
     background-color: #131313;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%23f03f3f' fill-opacity='0.1' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%23fff' fill-opacity='0.04' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     animation: animateImage 0.4s ease-in-out;
     opacity:1;
 }
@@ -216,13 +228,12 @@ div.megaheaderh1 {
     overflow: hidden;
 
     .h1-megaheader {
-        font-size: 6em;
+        font-size: 3em;
         font-weight: 700;
         position: absolute;
         z-index: 2;
         left: 10%;
         color: $textColor;
-        position: absolute;
         font-weight: 700;
         transition: 0.3s ease;
         bottom: 0px;
