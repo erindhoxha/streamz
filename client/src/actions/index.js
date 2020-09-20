@@ -1,5 +1,5 @@
 import streams from "../api/streams"
-import { SIGN_IN, SIGN_OUT } from "./types"
+import { SIGN_IN, SIGN_OUT, CREATE_STREAM } from "./types"
 
 // ERIND!!!
 console.log(streams.get("/streams").then(response => console.log(response)));
@@ -22,8 +22,8 @@ export const SignOut = () => {
 
 // Actions about CreateStream
 
-export const CreateStream = (formValues) => {
-    return async (dispatch) => {
-        streams.post('/streams', formValues)
-    };
+export const CreateStream = (formValues) => async dispatch => {
+    const response = await streams.post('/streams', formValues);
+
+    dispatch({ type: CREATE_STREAM, payload: response.data })
 }
