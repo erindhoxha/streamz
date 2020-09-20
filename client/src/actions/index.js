@@ -1,5 +1,13 @@
 import streams from "../api/streams"
-import { SIGN_IN, SIGN_OUT, CREATE_STREAM } from "./types"
+import {
+    SIGN_IN,
+    SIGN_OUT,
+    CREATE_STREAM,
+    FETCH_STREAMS,
+    FETCH_STREAM,
+    DELETE_STREAM,
+    EDIT_STREAM
+} from "./types"
 
 // ERIND!!!
 console.log(streams.get("/streams").then(response => console.log(response)));

@@ -5,11 +5,9 @@ export default (state = { streams: { id: null, title: null, description: null } 
             console.log(state);
             return {
                 ...state,
-                streams: {
-                    id: action.payload.id,
-                    title: action.payload.title,
-                    description: action.payload.description
-                }
+                id: action.payload.id,
+                title: action.payload.title,
+                description: action.payload.description
             }
             break;
         default:
