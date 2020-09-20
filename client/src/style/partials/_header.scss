@@ -1,0 +1,33 @@
+.nav-item {
+    a {
+        color: $white-text;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .dropdown-toggle {
+        a {
+            color: $black !important;
+        }
+    }
+
+    padding-left:30px;
+    font-size: 0.8em;
+    color: $white-text !important;
+    opacity: 1;
+}
+
+.logo {
+    width: 50px;
+}
+
+.navbar {
+    background-color: $black;
+    height: 80px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    position: absolute !important;
+    width: 100%;
+    z-index: 9999999999999999999;
+}

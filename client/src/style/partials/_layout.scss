@@ -1,0 +1,131 @@
+.section:after {
+    left: 5%;
+    border-left: 1px solid rgba(9, 9, 9, .4);
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgba(9, 9, 9, 0.4);
+}
+
+
+
+.profile {
+    span {
+        padding-right: 10px;
+        font-size: 13px !important;
+        font-weight: 600;
+    }
+}
+
+
+.banner-wrapper {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    max-height: 100vh;
+
+    .banner-welcome-msg {
+        h6 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        padding: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 100%;
+        height: 350px;
+        z-index: 9999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        overflow: hidden;
+
+        h1.h1-bg {
+            position: absolute;
+            color: rgba(0, 0, 0, 0) !important;
+            opacity: 0.04;
+            font-size: 200px;
+            text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.2), 1px -1px 0 rgba(255, 255, 255, 0.2), -1px 2px 0 rgba(255, 255, 255, 0.2), 1px 2px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        h1.h1-banner {
+            z-index: 999999999999999;
+            color: rgb(245, 245, 245);
+            font-weight: 700;
+            font-size: 90px;
+            text-transform: uppercase;
+            opacity: 1;
+            margin-bottom: 50px;
+        }
+
+        .banner-btn {
+            position: absolute;
+            height: 50px;
+            padding: 10px 30px 10px 30px;
+            border: none;
+            background-color: #dc3545;
+            font-size: 16px !important;
+            outline: 0;
+            z-index: 999999999999;
+            transition: ease;
+            bottom: 70px;
+            animation: animate-btn 1s;
+
+            &:after {
+                content: "";
+                position: absolute;
+                right: 0;
+                height: 100%;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                width: 100%;
+                bottom: 0;
+                width: 113%;
+                margin: 0 auto;
+                left: -9px;
+                margin: auto;
+                height: 50%;
+                top: -100%;
+                border-bottom: none;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                right: 0;
+                height: 100%;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                width: 100%;
+                bottom: 0;
+                width: 113%;
+                margin: 0 auto;
+                left: -9px;
+                margin: auto;
+                height: 50%;
+                bottom: -22%;
+                border-top: none;
+            }
+        }
+    }
+
+    .banner-image {
+        width: 100%;
+        object-fit: cover;
+        opacity: 0.5;
+        bottom: 0px;
+        height: 100%;
+    }
+
+    transition:0.3s ease-in-out;
+    background-color: #131313;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%23fff' fill-opacity='0.04' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    animation: animateImage 0.4s ease-in-out;
+    opacity:1;
+}

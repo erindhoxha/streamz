@@ -1,0 +1,50 @@
+div.megaheaderh1 {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+
+    .h1-megaheader {
+        font-size: 3em;
+        font-weight: 700;
+        position: absolute;
+        z-index: 2;
+        left: 10%;
+        color: $textColor;
+        font-weight: 700;
+        transition: 0.3s ease;
+        bottom: 0px;
+        animation: animate 0.7s ease-in-out;
+        animation-direction: alternate;
+        letter-spacing: -3px;
+    }
+
+    .h1-megaheader-outlined {
+        color: $white;
+        text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.05), 1px -1px 0 rgba(0, 0, 0, 0.05), -1px 1px 0 rgba(0, 0, 0, 0.05), 1px 1px 0 rgba(0, 0, 0, 0.05);
+        position: absolute;
+        font-weight: 700;
+        font-size: 8em;
+        white-space: pre;
+    }
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+p,
+span,
+div,
+a,
+button {
+    font-size: 1em !important;
+}
