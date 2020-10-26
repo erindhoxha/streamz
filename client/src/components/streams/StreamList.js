@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { fetchStreams } from "../../actions";
 
-const StreamCreate = () => {
-  return <div>StreamCreate</div>;
+const StreamCreate = (props) => {
+  useEffect(() => {
+    console.log(this.props);
+  });
+  return <div>StreamList</div>;
 };
 
-export default StreamCreate;
+export default connect(null, { fetchStreams })(StreamCreate);

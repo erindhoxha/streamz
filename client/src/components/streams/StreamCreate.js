@@ -1,48 +1,55 @@
 import React from "react";
-import { Field, reduxForm } from 'redux-form'
-import { connect } from "react-redux"
-import { CreateStream } from "../../actions"
+import { Field, reduxForm } from "redux-form";
+import { connect } from "react-redux";
+import { CreateStream } from "../../actions";
 
 class StreamCreate extends React.Component {
   renderError({ error, warning, touched }) {
     if (touched && error) {
-      return (
-        <div className="alert alert-danger">
-          {error}
-        </div>
-      )
+      return <div className="alert alert-danger">{error}</div>;
     }
     if (touched && warning) {
-      return (
-        <div className="alert alert-warning">
-          {warning}
-        </div>
-      )
+      return <div className="alert alert-warning">{warning}</div>;
     }
   }
   renderInput = ({ input, label, meta }) => {
     return (
       <div className="form-group">
         <label>{label}</label>
-        <input autoComplete="off" className="form-control form-control-md" {...input} />
+        <input
+          autoComplete="off"
+          className="form-control form-control-md"
+          {...input}
+        />
         {this.renderError(meta)}
       </div>
     );
-  }
+  };
   onSubmit = (formValues) => {
-    console.log(this.props);
     this.props.CreateStream(formValues);
-  }
+  };
   render() {
     return (
       <div className="container">
         <form className="" onSubmit={this.props.handleSubmit(this.onSubmit)}>
-          <Field name="title" component={this.renderInput} label="Enter title" />
-          <Field name="description" component={this.renderInput} label="Enter description" />
-          <input type="submit" disabled={this.props.submitting} value="Submit"></input>
+          <Field
+            name="title"
+            component={this.renderInput}
+            label="Enter title"
+          />
+          <Field
+            name="description"
+            component={this.renderInput}
+            label="Enter description"
+          />
+          <input
+            type="submit"
+            disabled={this.props.submitting}
+            value="Submit"
+          ></input>
         </form>
       </div>
-    )
+    );
   }
 }
 
@@ -56,10 +63,10 @@ const validate = (formValues) => {
     errors.description = "Description is required!";
   }
   return errors;
-}
+};
 
 const warn = (formValues) => {
-  const warnings = {}
+  const warnings = {};
   if (!formValues.title) {
     warnings.title = "Hmm, that's kind of a short title.";
   }
@@ -67,15 +74,12 @@ const warn = (formValues) => {
     warnings.description = "Description is required!";
   }
   return warnings;
-}
+};
 
 const formWrapped = reduxForm({
-  form: 'streamCreate',
+  form: "streamCreate",
   validate,
-  warn
+  warn,
 })(StreamCreate);
 
-export default connect(
-  null,
-  { CreateStream }
-)(formWrapped);
+export default connect(null, { CreateStream })(formWrapped);

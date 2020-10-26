@@ -6,5 +6,5 @@ import { reducer } from "redux-form";
 export default combineReducers({
   auth: authReducer,
   form: reducer,
-  streams: streamsReducer
+  streams: streamsReducer,
 });
