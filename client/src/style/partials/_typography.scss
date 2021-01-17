@@ -2,18 +2,14 @@ div.megaheaderh1 {
     position: relative;
     height: 200px;
     width: 100%;
-    overflow: hidden;
 
     .h1-megaheader {
         font-size: 3em;
         font-weight: 700;
-        position: absolute;
         z-index: 2;
-        left: 10%;
         color: $textColor;
         font-weight: 700;
         transition: 0.3s ease;
-        bottom: 0px;
         animation: animate 0.7s ease-in-out;
         animation-direction: alternate;
         letter-spacing: -3px;

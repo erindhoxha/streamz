@@ -2,6 +2,7 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import { CreateStream } from "../../actions";
+import Header from "../Header";
 
 class StreamCreate extends React.Component {
   renderError({ error, warning, touched }) {
@@ -30,24 +31,27 @@ class StreamCreate extends React.Component {
   };
   render() {
     return (
-      <div className="container">
-        <form className="" onSubmit={this.props.handleSubmit(this.onSubmit)}>
-          <Field
-            name="title"
-            component={this.renderInput}
-            label="Enter title"
-          />
-          <Field
-            name="description"
-            component={this.renderInput}
-            label="Enter description"
-          />
-          <input
-            type="submit"
-            disabled={this.props.submitting}
-            value="Submit"
-          ></input>
-        </form>
+      <div>
+        <Header minified={true} />
+        <div className="container">
+          <form className="" onSubmit={this.props.handleSubmit(this.onSubmit)}>
+            <Field
+              name="title"
+              component={this.renderInput}
+              label="Enter title"
+            />
+            <Field
+              name="description"
+              component={this.renderInput}
+              label="Enter description"
+            />
+            <input
+              type="submit"
+              disabled={this.props.submitting}
+              value="Submit"
+            ></input>
+          </form>
+        </div>
       </div>
     );
   }

@@ -4,7 +4,6 @@ import StreamCreate from "./streams/StreamCreate";
 import StreamEdit from "./streams/StreamEdit";
 import StreamDelete from "./streams/StreamDelete";
 import StreamShow from "./streams/StreamShow";
-import Header from "./Header";
 import "../style/global.css";
 import FirstPage from "./MainPage";
 
@@ -16,7 +15,6 @@ const App = () => {
   return (
     <div>
       <BrowserRouter>
-        <Header />
         <Route path="/" exact component={FirstPage} />
         <Route path="/stream/new" exact component={StreamCreate} />
         <Route path="/stream/edit" exact component={StreamEdit} />

@@ -62,12 +62,9 @@ const Header = (props) => {
                 >
                   Edit
                 </NavLink>
+                <DropdownItem divider />
                 <NavLink tag={Link} className="text-dark" to="/stream/delete">
                   Delete a stream
-                </NavLink>
-                <DropdownItem divider />
-                <NavLink tag={Link} className="text-dark" to="/stream/show">
-                  Show stream
                 </NavLink>
               </DropdownMenu>
             </UncontrolledDropdown>
@@ -93,124 +90,125 @@ const Header = (props) => {
           />
         </svg>
       </Navbar>
-      <div
-        style={{
-          backgroundColor: "black",
-          position: "relative",
-        }}
-        className="banner-wrapper"
-      >
-        <div className="banner-welcome-msg">
-          <h6 className="header-small">Find, watch, stream any videos</h6>
-          <h1 className="h1-banner">stream.io</h1>
-          <h1 className="h1-bg">stream.io</h1>
-          <button className="banner-btn">
+      {!props.minified && (
+        <div
+          style={{
+            backgroundColor: "black",
+            position: "relative",
+          }}
+          className="banner-wrapper"
+        >
+          <div className="banner-welcome-msg">
+            <h6 className="header-small">Find, watch, stream any videos</h6>
+            <h1 className="h1-banner">stream.io</h1>
+            <h1 className="h1-bg">stream.io</h1>
+            <button className="banner-btn">
+              <div
+                style={{
+                  width: "10px",
+                  height: "10px",
+                  backgroundColor: "rgba(0,0,0,0.8)",
+                  position: "absolute",
+                  left: "0",
+                  top: "0",
+                }}
+              ></div>
+              Browse streams
+              <div
+                style={{
+                  width: "10px",
+                  height: "10px",
+                  backgroundColor: "rgba(0,0,0,0.8)",
+                  position: "absolute",
+                  right: "0",
+                  bottom: "0",
+                }}
+              ></div>
+            </button>
+          </div>
+          <div
+            style={{
+              width: "70%",
+              height: "100%",
+              borderLeft: "1px solid rgba(255,255,255,0.03)",
+              margin: "0 auto",
+              position: "absolute",
+              left: "15%",
+              zIndex: "99999",
+              top: "0",
+            }}
+          >
             <div
               style={{
-                width: "10px",
-                height: "10px",
-                backgroundColor: "rgba(0,0,0,0.8)",
-                position: "absolute",
+                width: "15px",
+                height: "15px",
+                backgroundColor: "#dc3545",
+                position: "sticky",
                 left: "0",
-                top: "0",
+                top: "30%",
               }}
             ></div>
-            Browse streams
+          </div>
+          <div
+            style={{
+              width: "70%",
+              height: "100%",
+              borderLeft: "1px solid rgba(255,255,255,0.03)",
+              margin: "0 auto",
+              position: "absolute",
+              right: "25%",
+              zIndex: "99999",
+            }}
+          ></div>
+          <div
+            style={{
+              width: "40%",
+              height: "100%",
+              borderRight: "1px solid rgba(255,255,255,0.03)",
+              margin: "0 auto",
+              position: "absolute",
+              right: "15%",
+              zIndex: "99999",
+              top: "0",
+            }}
+          >
             <div
               style={{
-                width: "10px",
-                height: "10px",
-                backgroundColor: "rgba(0,0,0,0.8)",
+                width: "15px",
+                height: "15px",
+                backgroundColor: "#dc3545",
                 position: "absolute",
                 right: "0",
-                bottom: "0",
+                top: "60%",
               }}
             ></div>
-          </button>
-        </div>
-        <div
-          style={{
-            width: "70%",
-            height: "100%",
-            borderLeft: "1px solid rgba(255,255,255,0.2)",
-            margin: "0 auto",
-            position: "absolute",
-            left: "15%",
-            zIndex: "99999",
-            top: "0",
-          }}
-        >
-          <div
-            style={{
-              width: "15px",
-              height: "15px",
-              backgroundColor: "#dc3545",
-              position: "sticky",
-              left: "0",
-              top: "30%",
-            }}
-          ></div>
-        </div>
-        <div
-          style={{
-            width: "70%",
-            height: "100%",
-            borderLeft: "1px solid rgba(255,255,255,0.2)",
-            margin: "0 auto",
-            position: "absolute",
-            right: "25%",
-            zIndex: "99999",
-          }}
-        ></div>
-        <div
-          style={{
-            width: "40%",
-            height: "100%",
-            borderRight: "1px solid rgba(255,255,255,0.2)",
-            margin: "0 auto",
-            position: "absolute",
-            right: "15%",
-            zIndex: "99999",
-            top: "0",
-          }}
-        >
+            <div
+              style={{
+                width: "15px",
+                height: "15px",
+                backgroundColor: "#dc3545",
+                position: "absolute",
+                right: "0",
+                top: "2%",
+              }}
+            ></div>
+          </div>
+          <img
+            className="banner-image"
+            src="https://images.unsplash.com/photo-1560252719-59e35a3bbc6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+          />
           <div
             style={{
               width: "15px",
               height: "15px",
               backgroundColor: "#dc3545",
               position: "absolute",
-              right: "0",
-              top: "60%",
-            }}
-          ></div>
-          <div
-            style={{
-              width: "15px",
-              height: "15px",
-              backgroundColor: "#dc3545",
-              position: "absolute",
-              right: "0",
-              top: "2%",
+              left: "25",
+              bottom: "0",
             }}
           ></div>
         </div>
-        <img
-          className="banner-image"
-          src="https://images.unsplash.com/photo-1560252719-59e35a3bbc6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-        />
-        <div
-          style={{
-            width: "15px",
-            height: "15px",
-            backgroundColor: "#dc3545",
-            position: "absolute",
-            left: "25",
-            bottom: "0",
-          }}
-        ></div>
-      </div>
-      <hr />
+      )}
     </div>
   );
 };
