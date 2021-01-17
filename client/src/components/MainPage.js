@@ -1,5 +1,5 @@
 import React from "react";
-import StreamShow from "./streams/StreamShow";
+import StreamList from "./streams/StreamList";
 
 const FirstPage = () => {
   return (
@@ -29,6 +29,7 @@ const FirstPage = () => {
       </div>
       <div className="megaheaderh1">
         <h1 className="h1-megaheader">FIND YOUR FAVOURITE STREAMS.</h1>
+        <StreamList />
         <div
           style={{
             width: "15px",

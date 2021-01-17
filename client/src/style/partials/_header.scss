@@ -6,18 +6,21 @@
         letter-spacing: 1px;
     }
 
-    .dropdown-toggle {
-        a {
-            color: $black !important;
-        }
+.dropdown-toggle {
+    a {
+        color: $black !important;
     }
-
+}
     padding-left:30px;
     font-size: 0.8em;
     color: $white-text !important;
     opacity: 1;
 }
-
+.dropdown-menu.dropdown-menu-right.show {
+    a {
+        color:#000 !important;
+    }
+}
 .logo {
     width: 50px;
 }

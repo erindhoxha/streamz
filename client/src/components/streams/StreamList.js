@@ -1,12 +1,27 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchStreams } from "../../actions";
+import { FetchStreams } from "../../actions";
 
-const StreamCreate = (props) => {
-  useEffect(() => {
+class StreamList extends React.Component {
+  componentDidMount() {
+    this.props.FetchStreams();
+  }
+
+  render() {
     console.log(this.props);
-  });
-  return <div>StreamList</div>;
+    return this.props.streams.map((item) => {
+      return (
+        <div key={item.id} className="stream-card">
+          <div>{item.title}</div>
+          <div className="card-image"></div>
+        </div>
+      );
+    });
+  }
+}
+
+const mapStateToProps = (state) => {
+  return { streams: Object.values(state.streams) };
 };
 
-export default connect(null, { fetchStreams })(StreamCreate);
+export default connect(mapStateToProps, { FetchStreams })(StreamList);
