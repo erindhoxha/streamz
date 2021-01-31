@@ -6,6 +6,13 @@ import streams from "../../api/streams";
 class StreamList extends React.Component {
   componentDidMount() {
     this.props.FetchStreams();
+    console.log("props", this.props);
+  }
+
+  renderAdmin(stream) {
+    if (stream.userId == this.props.currentUserId) {
+      return <div>EDIT/DELETE</div>;
+    }
   }
 
   renderList() {
@@ -22,6 +29,7 @@ class StreamList extends React.Component {
           </div>
           <p className="mb-1">{stream.description}</p>
           <small className="text-muted">Donec id elit non mi porta.</small>
+          {this.renderAdmin(stream)}
         </a>
       );
     });
@@ -38,7 +46,10 @@ class StreamList extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { streams: Object.values(state.streams) };
+  return {
+    streams: Object.values(state.streams),
+    currentUserId: state.auth.id,
+  };
 };
 
 export default connect(mapStateToProps, { FetchStreams })(StreamList);
