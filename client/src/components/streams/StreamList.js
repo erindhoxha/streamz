@@ -6,7 +6,6 @@ import streams from "../../api/streams";
 class StreamList extends React.Component {
   componentDidMount() {
     this.props.FetchStreams();
-    console.log("props", this.props);
   }
   deleteEntry(entry) {
     this.props.DeleteStream(entry)
@@ -55,7 +54,11 @@ class StreamList extends React.Component {
     return (
       <div>
         <h2 className="mb-2">Streams</h2>
-        <div className="list-group mb-5">{this.renderList()}</div>
+        <div className="list-group">{this.renderList()}</div>
+        {console.log(this.props.isSignedIn)}
+        {this.props.isSignedIn ? (
+          <div>Create stream</div>
+        ) : ''}
       </div>
     );
   }
@@ -65,6 +68,7 @@ const mapStateToProps = (state) => {
   return {
     streams: Object.values(state.streams),
     currentUserId: state.auth.id,
+    isSignedIn: state.auth.isSignedIn
   };
 };
 
