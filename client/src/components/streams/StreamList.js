@@ -1,20 +1,33 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { FetchStreams } from "../../actions";
+import { FetchStreams, EditStream, DeleteStream } from "../../actions";
 import streams from "../../api/streams";
 
 class StreamList extends React.Component {
   componentDidMount() {
     this.props.FetchStreams();
-    console.log("props", this.props);
+  }
+  deleteEntry(entry) {
+    this.props.DeleteStream(entry);
+  }
+
+  editEntry(e) {
+    e.preventDefault();
   }
 
   renderAdmin(stream) {
     if (stream.userId == this.props.currentUserId) {
       return (
-        <div>
-          <button className="btn btn-warning">Edit</button>
-          <button className="btn btn-danger">Delete</button>
+        <div className="float-right">
+          <button
+            onClick={() => this.deleteEntry(stream.id)}
+            className="btn btn-danger mr-2"
+          >
+            Delete
+          </button>
+          <button onClick={this.editEntry} className="btn btn-warning">
+            Edit
+          </button>
         </div>
       );
     }
@@ -44,7 +57,9 @@ class StreamList extends React.Component {
     return (
       <div>
         <h2 className="mb-2">Streams</h2>
-        <div className="list-group mb-5">{this.renderList()}</div>
+        <div className="list-group">{this.renderList()}</div>
+        {console.log(this.props.isSignedIn)}
+        {this.props.isSignedIn ? <div>Create stream</div> : ""}
       </div>
     );
   }
@@ -54,7 +69,12 @@ const mapStateToProps = (state) => {
   return {
     streams: Object.values(state.streams),
     currentUserId: state.auth.id,
+    isSignedIn: state.auth.isSignedIn,
   };
 };
 
-export default connect(mapStateToProps, { FetchStreams })(StreamList);
+export default connect(mapStateToProps, {
+  FetchStreams,
+  EditStream,
+  DeleteStream,
+})(StreamList);
