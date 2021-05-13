@@ -3,6 +3,7 @@ import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import { CreateStream } from "../../actions";
 import Header from "../Header";
+import { Spinner } from 'reactstrap';
 
 class StreamCreate extends React.Component {
   renderError({ error, warning, touched }) {
@@ -45,11 +46,11 @@ class StreamCreate extends React.Component {
               component={this.renderInput}
               label="Enter description"
             />
-            <input
-              type="submit"
-              disabled={this.props.submitting}
-              value="Submit"
-            ></input>
+            <button className="btn btn-success" type="submit" disabled={this.props.submitting}>Submit                   
+              <Spinner animation="border" role="status">
+                Loading...
+              </Spinner>
+            </button>
           </form>
         </div>
       </div>
