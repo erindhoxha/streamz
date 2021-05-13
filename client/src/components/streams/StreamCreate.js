@@ -15,7 +15,7 @@ class StreamCreate extends React.Component {
   }
   renderInput = ({ input, label, meta }) => {
     return (
-      <div className="form-group">
+      <div className="form-group mt-2">
         <label>{label}</label>
         <input
           autoComplete="off"
@@ -33,7 +33,7 @@ class StreamCreate extends React.Component {
     return (
       <div>
         <Header minified={true} />
-        <div className="container">
+        <div className="container mt-4">
           <form className="" onSubmit={this.props.handleSubmit(this.onSubmit)}>
             <Field
               name="title"

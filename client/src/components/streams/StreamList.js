@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { FetchStreams, EditStream, DeleteStream } from "../../actions";
 import streams from "../../api/streams";
+import { Link } from "react-router-dom";
 
 class StreamList extends React.Component {
   componentDidMount() {
@@ -33,6 +34,18 @@ class StreamList extends React.Component {
     }
   }
 
+  renderCreate() {
+    if (this.props.isSignedIn) {
+      return (
+        <div className="text-right">
+           <Link to="/stream/new" className="btn btn-success mt-2 ml-auto text-right">
+              Create stream
+           </Link>
+        </div>
+      )
+    }
+  }
+
   renderList() {
     return this.props.streams.map((stream) => {
       return (
@@ -58,8 +71,7 @@ class StreamList extends React.Component {
       <div>
         <h2 className="mb-2">Streams</h2>
         <div className="list-group">{this.renderList()}</div>
-        {console.log(this.props.isSignedIn)}
-        {this.props.isSignedIn ? <div>Create stream</div> : ""}
+        {this.renderCreate()}
       </div>
     );
   }
