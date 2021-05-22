@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { FetchStreams, EditStream, DeleteStream } from "../../actions";
 import streams from "../../api/streams";
 import { Link } from "react-router-dom";
+import history from "../../history";
 
 class StreamList extends React.Component {
   componentDidMount() {
@@ -11,9 +12,8 @@ class StreamList extends React.Component {
   deleteEntry(entry) {
     this.props.DeleteStream(entry);
   }
-
-  editEntry(e) {
-    e.preventDefault();
+  editEntry(id) {
+    history.push("/stream/edit/" + id)
   }
 
   renderAdmin(stream) {
@@ -26,9 +26,7 @@ class StreamList extends React.Component {
           >
             Delete
           </button>
-          <button onClick={this.editEntry} className="btn btn-warning">
-            Edit
-          </button>
+          <Link to={"/stream/edit/" + stream.id} className="btn btn-warning">Edit</Link>
         </div>
       );
     }
@@ -38,8 +36,8 @@ class StreamList extends React.Component {
     if (this.props.isSignedIn) {
       return (
         <div className="text-right">
-           <Link to="/stream/new" className="btn btn-success mt-2 ml-auto text-right">
-              Create stream
+          <Link to="/stream/new" className="btn btn-success mt-2 ml-auto text-right">
+            Create stream
            </Link>
         </div>
       )
