@@ -34,6 +34,8 @@ export const CreateStream = (formValues) => async (dispatch, getState) => {
   const userId = getState().auth.id;
   const response = await streams.post("/streams", { ...formValues, userId });
   dispatch({ type: CREATE_STREAM, payload: response.data });
+
+  // Here we want to navigate the user back to the home page
 };
 
 export const FetchStreams = () => async (dispatch) => {
