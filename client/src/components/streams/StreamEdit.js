@@ -7,14 +7,20 @@ import StreamList from "./StreamList";
 
 class StreamEdit extends React.Component {
   componentDidMount() {
+    this.props.FetchStream(6);
   }
+
   render() {
     return (
       <div>
         <Header minified={true} />
         <div className="container mt-5">
           Edit stream
+          <div>
+            {console.log(this.props.streams["6"])}
+          </div>
         </div>
+
       </div>
     )
   }
