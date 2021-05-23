@@ -1,13 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
 import { FetchStreams, EditStream, DeleteStream, FetchStream } from "../../actions";
-import history from "../../history";
 import Header from "../Header";
-import StreamList from "./StreamList";
 
 class StreamEdit extends React.Component {
   componentDidMount() {
-    this.props.FetchStream(6);
+    this.props.FetchStream(this.props.match.params.id);
+    console.log("Props are here!", this.props);
+  }
+
+  renderStream(id) {
+    return (
+      <div>
+
+      </div>
+    )
   }
 
   render() {
@@ -17,26 +24,23 @@ class StreamEdit extends React.Component {
         <div className="container mt-5">
           Edit stream
           <div>
-            {console.log(this.props.streams["6"])}
+            {console.log("Stream:", this.props.stream)}
+            Title: {this.props.stream ? this.props.stream.title : ''}
+            Description: {this.props.stream ? this.props.stream.description : ''}
           </div>
         </div>
-
       </div>
     )
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    streams: state.streams,
-    currentUserId: state.auth.id,
-    isSignedIn: state.auth.isSignedIn,
+    stream: state.streams[ownProps.match.params.id]
   };
 };
 
 export default connect(mapStateToProps, {
-  FetchStreams,
   EditStream,
-  DeleteStream,
   FetchStream
 })(StreamEdit);
