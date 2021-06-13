@@ -43,9 +43,9 @@ class StreamForm extends React.Component {
                             label="Enter description"
                         />
                         <button className="btn btn-success" type="submit" disabled={this.props.submitting}>Submit
-                        <Spinner animation="border" role="status">
+                        {/* <Spinner animation="border" role="status">
                                 Loading...
-                        </Spinner>
+                        </Spinner> */}
                         </button>
                     </form>
                 </div>

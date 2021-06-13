@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { FetchStreams, EditStream, DeleteStream, FetchStream } from "../../actions";
 import Header from "../Header";
+import StreamForm from "./StreamForm";
 
 class StreamEdit extends React.Component {
   componentDidMount() {
@@ -12,7 +13,6 @@ class StreamEdit extends React.Component {
   renderStream(id) {
     return (
       <div>
-
       </div>
     )
   }
@@ -24,9 +24,7 @@ class StreamEdit extends React.Component {
         <div className="container mt-5">
           Edit stream
           <div>
-            {console.log("Stream:", this.props.stream)}
-            Title: {this.props.stream ? this.props.stream.title : ''}
-            Description: {this.props.stream ? this.props.stream.description : ''}
+            <StreamForm initialValues={this.props.stream} />
           </div>
         </div>
       </div>
