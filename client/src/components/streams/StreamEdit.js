@@ -17,6 +17,10 @@ class StreamEdit extends React.Component {
     )
   }
 
+  onSubmit = (formValues) => {
+    this.props.EditStream(formValues.id, formValues);
+  };
+
   render() {
     return (
       <div>
@@ -24,7 +28,7 @@ class StreamEdit extends React.Component {
         <div className="container mt-5">
           Edit stream
           <div>
-            <StreamForm initialValues={this.props.stream} />
+            <StreamForm initialValues={this.props.stream} onSubmit={this.onSubmit} />
           </div>
         </div>
       </div>
