@@ -30,14 +30,14 @@ const Header = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink data-text="H O M E" className="glitch" tag={Link} to="/">
+              <NavLink data-text="H O M E" className="" tag={Link} to="/">
                 Home
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
                 data-text="C R E A T E"
-                className="glitch"
+                className=""
                 tag={Link}
                 to="/stream/new"
               >
@@ -48,7 +48,7 @@ const Header = (props) => {
               <DropdownToggle
                 nav
                 caret
-                className="glitch"
+                className=""
                 data-text="O P T I O N S"
               >
                 Options
@@ -57,7 +57,7 @@ const Header = (props) => {
                 <NavLink
                   data-text="E D I T"
                   tag={Link}
-                  className="text-dark glitch"
+                  className="text-dark "
                   to="/stream/edit"
                 >
                   Edit
@@ -99,7 +99,7 @@ const Header = (props) => {
           className="banner-wrapper"
         >
           <div className="banner-welcome-msg">
-            <h6 className="header-small">Find, watch, stream any videos</h6>
+            <h6 className="header-small">Find, watch and stream any videos</h6>
             <h1 className="h1-banner">stream.io</h1>
             <h1 className="h1-bg">stream.io</h1>
             <button className="banner-btn">

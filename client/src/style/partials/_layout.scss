@@ -22,7 +22,10 @@
     overflow: hidden;
     position: relative;
     max-height: calc(100vh - 80px);
-
+    transition:0.3s ease-in-out;
+    background-color: #131313;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%23fff' fill-opacity='0.04' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity:1;
     .banner-welcome-msg {
         h6 {
             color: white;
@@ -60,19 +63,17 @@
         h1.h1-banner {
             z-index: 999999999999999;
             font-weight: 700;
-            font-size: 90px;
+            font-size: 80px;
             text-transform: uppercase;
             opacity: 1;
             margin-bottom: 75px;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            background: url(https://images.unsplash.com/photo-1560252719-59e35a3bbc6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80) no-repeat;
             color: white;
-            color: white;
-            background: url(https://images.unsplash.com/photo-1560252719-59e35a3bbc6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80) no-repeat;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 6px 5px 1px whitesmoke;
+            letter-spacing:-3px;
         }
 
         .banner-btn {
@@ -81,32 +82,30 @@
             padding: 10px 30px 10px 30px;
             border: none;
             background-color: #dc3545;
-            font-size: 16px !important;
+            font-size: 14px !important;
+            font-weight:400 !important;
             outline: 0;
             z-index: 999999999999;
             transition: ease;
             bottom: 70px;
             animation: animate-btn 1s;
-
+            div {
+                background-color:transparent !important;
+            }
             &:after {
-                content: "";
                 position: absolute;
                 right: 0;
-                height: 100%;
                 border: 1px solid rgba(255, 255, 255, 0.2);
-                width: 100%;
                 bottom: 0;
                 width: 113%;
-                margin: 0 auto;
-                left: -9px;
                 margin: auto;
                 height: 50%;
+                left: -9px;
                 top: -100%;
                 border-bottom: none;
             }
 
             &:before {
-                content: "";
                 position: absolute;
                 right: 0;
                 height: 100%;
@@ -131,9 +130,4 @@
         bottom: 0px;
         height: 100%;
     }
-
-    transition:0.3s ease-in-out;
-    background-color: #131313;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%23fff' fill-opacity='0.04' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity:1;
 }
