@@ -2,12 +2,16 @@ import React from "react";
 import { connect } from "react-redux";
 import { CreateStream } from "../../actions";
 import Header from "../Header";
+import Loader from "../Loader";
 import StreamForm from "../streams/StreamForm";
 
 class StreamCreate extends React.Component {
   onSubmit = (formValues) => {
     this.props.CreateStream(formValues);
   };
+  componentDidMount() {
+    console.log("Mounted!");
+  }
   render() {
     return (
       <div>

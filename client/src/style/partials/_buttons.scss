@@ -13,3 +13,9 @@ button {
 button {
     color: $white-text !important;
 }
+
+.nav-link {
+    &:hover {
+        opacity:0.8;
+    }
+}

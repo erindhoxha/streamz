@@ -13,7 +13,6 @@ import {
   DropdownMenu,
   DropdownItem,
   NavbarText,
-  Jumbotron,
 } from "reactstrap";
 import GoogleAuth from "./GoogleAuth";
 
@@ -25,7 +24,7 @@ const Header = (props) => {
     <div>
       <Navbar dark expand="sm">
         <NavbarBrand href="/">
-          <img className="logo" src="../assets/v.png" />
+          stream.io
         </NavbarBrand>
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -102,46 +101,30 @@ const Header = (props) => {
             <h6 className="header-small">Find, watch and stream any videos</h6>
             <h1 className="h1-banner">stream.io</h1>
             <h1 className="h1-bg">stream.io</h1>
-            <button className="banner-btn">
-              <div
-                style={{
-                  width: "10px",
-                  height: "10px",
-                  backgroundColor: "rgba(0,0,0,0.8)",
-                  position: "absolute",
-                  left: "0",
-                  top: "0",
-                }}
-              ></div>
-              Browse streams
-              <div
-                style={{
-                  width: "10px",
-                  height: "10px",
-                  backgroundColor: "rgba(0,0,0,0.8)",
-                  position: "absolute",
-                  right: "0",
-                  bottom: "0",
-                }}
-              ></div>
-            </button>
+            <div>
+              <NavLink
+                className="d-inline"
+                tag={Link}
+                to="/stream/new"
+              >
+                <button className="learn-more">View latest streams <i className="fas fa-chevron-down ml-2"></i></button>
+              </NavLink>
+              <NavLink
+                className="d-inline"
+                tag={Link}
+                to="/stream/new"
+              >
+                <button className="create-more">Create stream <i className="fas fa-chevron-right ml-2"></i></button>
+              </NavLink>
+            </div>
+
+
           </div>
-          <div
-            style={{
-              width: "70%",
-              height: "100%",
-              borderLeft: "1px solid rgba(255,255,255,0.03)",
-              margin: "0 auto",
-              position: "absolute",
-              left: "15%",
-              zIndex: "99999",
-              top: "0",
-            }}
-          >
+          <div className="dots">
             <div
               style={{
-                width: "15px",
-                height: "15px",
+                width: "10px",
+                height: "10px",
                 backgroundColor: "#dc3545",
                 position: "sticky",
                 left: "0",
@@ -174,8 +157,8 @@ const Header = (props) => {
           >
             <div
               style={{
-                width: "15px",
-                height: "15px",
+                width: "10px",
+                height: "10px",
                 backgroundColor: "#dc3545",
                 position: "absolute",
                 right: "0",
@@ -184,8 +167,8 @@ const Header = (props) => {
             ></div>
             <div
               style={{
-                width: "15px",
-                height: "15px",
+                width: "10px",
+                height: "10px",
                 backgroundColor: "#dc3545",
                 position: "absolute",
                 right: "0",
@@ -199,8 +182,8 @@ const Header = (props) => {
           />
           <div
             style={{
-              width: "15px",
-              height: "15px",
+              width: "10px",
+              height: "10px",
               backgroundColor: "#dc3545",
               position: "absolute",
               left: "25",

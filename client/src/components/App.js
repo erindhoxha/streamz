@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Router, Route } from "react-router-dom";
 import StreamCreate from "./streams/StreamCreate";
 import StreamEdit from "./streams/StreamEdit";
@@ -7,6 +7,7 @@ import StreamShow from "./streams/StreamShow";
 import "../style/global.css";
 import FirstPage from "./MainPage";
 import history from "../history";
+import Loader from "./Loader";
 
 const PageTwo = () => {
   return <div>PageTwo</div>;

@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import Loader from "./Loader";
 import StreamList from "./streams/StreamList";
 
 const FirstPage = () => {

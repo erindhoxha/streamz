@@ -31,5 +31,9 @@
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
     width: 100%;
-    z-index: 9999999999999999999;
+    z-index: 999;
+}
+.navbar-brand {
+    margin-right:0px !important;
+    font-weight:900;
 }

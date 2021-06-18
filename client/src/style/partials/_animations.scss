@@ -92,14 +92,98 @@ skew to change the 'thickness' of the glitch.*/
     }
 }
 
-@keyframes animate-btn {
+@keyframes fadeUp {
     from {
-        bottom: -150px;
-        opacity: 0;
+        transform:translateY(30px);
+        opacity:0;
     }
 
     to {
-        bottom: 70px;
-        opacity: 1;
+        transform:translateY(0px);
+        opacity:1;
+    }
+}
+
+@keyframes fadeUpText {
+    from {
+        transform:translateY(30px);
+        opacity:0;
+    }
+
+    to {
+        transform:translateY(0px);
+        opacity:1;
+    }
+}
+
+@keyframes animate-btn {
+    from {
+        transform:translateY(30px);
+    }
+
+    to {
+        transform:translateY(0px);
+    }
+}
+@keyframes animate-btn-after {
+    from {
+        transform: translate3d(0, 0em, 0em);
+    }
+
+    to {
+        transform: translate3d(0, 0.8em, -1em);
+    }
+}
+.loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width:100%;
+    background-color: #000;
+    position:fixed;
+    top:0;
+    right:-100%;
+    z-index:999999999999999;
+    color: #000;
+    overflow-y: hidden;
+    animation: moveLeftFull 2.2s ease-in-out;
+}
+
+.loader2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width:100%;
+    right:-100%;
+    background-color: $red;
+    position:fixed;
+    top:0;
+    z-index:999999999999999;
+    color: #000;
+    overflow-y: hidden;
+    animation: moveLeft 1s 1s ease-in-out;
+}
+@keyframes moveLeftFull {
+    0% {
+        right:200%;
+    }
+    50% {
+        right:0%;
+    }
+    100% {
+        right:-100%;
+    }
+}
+
+@keyframes moveLeft {
+    0% {
+        right:200%;
+    }
+    100% {
+        right:-100%;
     }
 }
