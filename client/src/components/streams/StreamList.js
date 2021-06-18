@@ -22,11 +22,11 @@ class StreamList extends React.Component {
         <div className="float-right">
           <button
             onClick={() => this.deleteEntry(stream.id)}
-            className="btn btn-danger mr-2"
+            className="btn delete-btn mr-2"
           >
             Delete
           </button>
-          <Link to={"/stream/edit/" + stream.id} className="btn btn-warning">Edit</Link>
+          <Link to={"/stream/edit/" + stream.id} className="edit-btn btn">Edit</Link>
         </div>
       );
     }
@@ -36,7 +36,7 @@ class StreamList extends React.Component {
     if (this.props.isSignedIn) {
       return (
         <div className="text-right">
-          <Link to="/stream/new" className="btn btn-success mt-2 ml-auto text-right">
+          <Link to="/stream/new" className="btn btn-create mt-4 ml-auto text-right">
             Create stream
            </Link>
         </div>
@@ -47,8 +47,7 @@ class StreamList extends React.Component {
   renderList() {
     return this.props.streams.map((stream) => {
       return (
-        <a
-          href="#"
+        <div
           className="list-group-item list-group-item-action"
           key={stream.id}
         >
@@ -59,7 +58,7 @@ class StreamList extends React.Component {
           <p className="mb-1">{stream.description}</p>
           <small className="text-muted">Donec id elit non mi porta.</small>
           {this.renderAdmin(stream)}
-        </a>
+        </div>
       );
     });
   }
@@ -67,7 +66,7 @@ class StreamList extends React.Component {
   render() {
     return (
       <div>
-        <h2 className="mb-2">Streams</h2>
+        <h2 className="mb-3 h2-heading">Streams</h2>
         <div className="list-group">{this.renderList()}</div>
         {this.renderCreate()}
       </div>

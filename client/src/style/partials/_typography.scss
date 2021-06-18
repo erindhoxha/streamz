@@ -31,6 +31,11 @@ h1 {
 
 h2 {
     font-size: 1.6em;
+    &.h2-heading {
+        font-size:1.8rem;
+        font-weight:900;
+        text-transform: lowercase;
+    }
 }
 
 h3 {

@@ -7,7 +7,7 @@ const FirstPage = () => {
   return (
     <div>
       <Header />
-      <div className="container pt-5">
+      <div className="container pt-5 pb-5">
         <StreamList />
       </div>
     </div>
